@@ -21,17 +21,17 @@ function getArticleUrl(index){
   getArticleSummary(headlineList.newsStories[index].webUrl)
 }
 
-
-
-// headlineList.getArticleIndex();
-
 function getArticleSummary(article_link){
   var article = new XMLHttpRequest();
+
   article.open('GET', "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + article_link, true);
   article.send();
-  article.onreadystatechange = processRequest;
-  document.getElementById('article').innerHTML = article.responseText[1];
-  console.log(article)
-  console.log(article.response.text)
-  // console.log(article)
+  article.onreadystatechange = summarizeHeadline;
+
+  function summarizeHeadline() {
+    if (article.readyState == 4 && article.status == 200) {
+      var response = JSON.parse(article.responseText);
+      document.getElementById('article').innerHTML = response.text;
+    }
+  }
 }
