@@ -1,3 +1,5 @@
+var headlineList = new HeadlineListView()
+
 var xhr = new XMLHttpRequest();
 xhr.open('GET', "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?order-by=newest&q=politics?show-fields=body", true);
 xhr.send();
@@ -7,12 +9,17 @@ xhr.onreadystatechange = processRequest;
 function processRequest() {
   if (xhr.readyState == 4 && xhr.status == 200) {
     var response = JSON.parse(xhr.responseText);
-    var array = response.response.results;
-    var headlineList = new HeadlineListView(array)
-    console.log(headlineList.getArticleURL(5))
+    var array = response.response.results
+    headlineList.newsStories = array
     document.getElementById('headlines').innerHTML = headlineList.getHTML();
   }
 }
+triggerActionOnClick()
+
+function triggerActionOnClick() {
+  // console.log(headlineList.getArticleIndex)
+  window.addEventListener("hashchange", headlineList.getArticleIndex);
+};
 
 
 function getArticleSummary(article_link){

@@ -1,8 +1,10 @@
 (function(exports) {
 
-  function HeadlineListView(list){
+  function HeadlineListView(list = []){
     this.newsStories = list;
   }
+
+  var me = this;
 
   HeadlineListView.prototype.getHTML = function () {
     var arrayLength = this.newsStories.length;
@@ -12,7 +14,6 @@
       var htmlOutput = "<ul>"
       for (var i = 0; i < arrayLength; i++) {
         htmlOutput += "<li><div>" + '<a href="#' + i + '">' + this.newsStories[i].webTitle + "</a></div></li>"
-        // console.log(this.newsStories[i])
       };
       htmlOutput += "</ul>"
 
@@ -20,28 +21,19 @@
     return htmlOutput;
   };
 
-  triggerActionOnClick()
-
-  function triggerActionOnClick() {
-    window.addEventListener("hashchange", getArticleIndex);
-  };
-  
-  function getArticleIndex(){
+  HeadlineListView.prototype.getArticleIndex = function () {
+    console.log(me)
     var index = window.location.hash.split("#")[1];
-    getArticleUrl(index)
-  }
-
-  function getArticleUrl(index){
-    console.log(this.newsStories[index].webUrl)
-  }
-
-  function testFunction(){
-    console.log("It has worked");
+    me.getArticleUrl(index)
   };
 
-  HeadlineListView.prototype.getArticleURL = function(article_number){
-    return this.newsStories[article_number].webUrl;
-  }
+  HeadlineListView.prototype.getArticleUrl = function(index) {
+    console.log('hi')
+  };
+
+  // HeadlineListView.prototype.getArticleURL = function(article_number){
+  //   return this.newsStories[article_number].webUrl;
+  // }
 
   exports.HeadlineListView = HeadlineListView;
 
