@@ -1,8 +1,8 @@
 (function(exports){
 
-  function NewsItem(title, url){
-    this._title = title;
-    this._url = url;
+  function NewsItem(response){
+    this._title = response.webTitle;
+    this._url = response.webUrl;
   }
 
   NewsItem.prototype.title = function(){

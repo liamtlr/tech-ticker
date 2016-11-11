@@ -5,7 +5,7 @@ describe('NewsItem', function(){
     webUrl: "https://www.theguardian.com/technology/2016/nov/10/google-european-commission-android"
   };
 
-  var newsItem = new NewsItem(response.webTitle, response.webUrl);
+  var newsItem = new NewsItem(response);
 
   it('can be created with a text and url', function(){
     expect(newsItem.title()).toEqual(response.webTitle);
