@@ -4,10 +4,16 @@ describe('NewsList', function(){
     response:{
     results: [
       { webTitle: "Google to European commission: Android is key to mobile competition",
-        webUrl: "https://www.theguardian.com/technology/2016/nov/10/google-european-commission-android"
+        webUrl: "https://www.theguardian.com/technology/2016/nov/10/google-european-commission-android",
+        fields: {
+          thumbnail: "https://media.guim.co.uk/17dd1523da1b37e5b4196c9bb32e58eecce6bba4/0_158_1920_1152/500.jpg"
+        }
       },
       { webTitle: "VR firms make a play for the mainstream with video arcades",
-        webUrl: "https://www.theguardian.com/technology/2016/nov/11/virtual-reality-firms-make-play-for-mainstream-with-video-arcades"
+        webUrl: "https://www.theguardian.com/technology/2016/nov/11/virtual-reality-firms-make-play-for-mainstream-with-video-arcades",
+        fields: {
+          thumbnail: "https://media.guim.co.uk/17dd1523da1b37e5b4196c9bb32e58eecce6bba4/0_158_1920_1152/500.jpg"
+        }
       }]
     }
   };

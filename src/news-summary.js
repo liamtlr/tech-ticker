@@ -1,6 +1,7 @@
 (function(exports){
   function NewsSummary(newsItem){
     this.loadSummary(newsItem);
+    this.addFullLink(newsItem);
   }
 
   NewsSummary.prototype.loadSummary = function(newsItem){
@@ -18,6 +19,13 @@
         document.getElementById('news-summary').innerHTML = joinedResponse;
       }
     }
+  }
+
+  NewsSummary.prototype.addFullLink = function(newsItem){
+    var html =`<p>Full article: ${newsItem.linkHtml()}</p>`;
+    url = newsItem.thumbnailUrl();
+    html += `<div><img src='${url}' style='width: 400px;'></div>`
+    document.getElementById('full-link').innerHTML = html;
   }
 
   exports.NewsSummary = NewsSummary;

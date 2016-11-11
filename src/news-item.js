@@ -3,6 +3,7 @@
   function NewsItem(response){
     this._title = response.webTitle;
     this._url = response.webUrl;
+    this._thumbUrl = response.fields.thumbnail;
   }
 
   NewsItem.prototype.title = function(){
@@ -11,6 +12,10 @@
 
   NewsItem.prototype.url = function(){
     return this._url;
+  }
+
+  NewsItem.prototype.thumbnailUrl = function(){
+    return this._thumbUrl;
   }
 
   NewsItem.prototype.linkHtml = function(){

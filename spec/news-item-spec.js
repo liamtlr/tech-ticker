@@ -2,7 +2,10 @@ describe('NewsItem', function(){
 
   var response = {
     webTitle: "Google to European commission: Android is key to mobile competition",
-    webUrl: "https://www.theguardian.com/technology/2016/nov/10/google-european-commission-android"
+    webUrl: "https://www.theguardian.com/technology/2016/nov/10/google-european-commission-android",
+    fields: {
+      thumbnail: "https://media.guim.co.uk/17dd1523da1b37e5b4196c9bb32e58eecce6bba4/0_158_1920_1152/500.jpg"
+    }
   };
 
   var summaryResponse = {
@@ -13,13 +16,14 @@ describe('NewsItem', function(){
       "The case against Android comes at a time when Google is also embroiled in a battle with the EC over its Shopping search engine feature and its AdSense text advertising service."
     ]
   };
-
+  
   var newsItem = new NewsItem(response);
   newsItem.setId(0);
 
-  it('can be created with a text and url', function(){
+  it('can be created with a text, url and thumbnail url', function(){
     expect(newsItem.title()).toEqual(response.webTitle);
     expect(newsItem.url()).toEqual(response.webUrl);
+    expect(newsItem.thumbnailUrl()).toEqual(response.fields.thumbnail);
   });
 
   it('has linkHtml() method that returns a title with an html link', function(){
