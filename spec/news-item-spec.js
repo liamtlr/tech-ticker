@@ -12,7 +12,7 @@ describe('NewsItem', function(){
     expect(newsItem.url()).toEqual(response.webUrl);
   });
 
-  it('has toHtml() method that returns an html link to the url', function(){
+  it('has toHtml() method that returns a title with an html link', function(){
     expect(newsItem.toHtml()).toEqual(`<a href="${newsItem.url()}">${newsItem.title()}</a>`);
   });
 
