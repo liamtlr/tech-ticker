@@ -16,4 +16,8 @@ describe('NewsItem', function(){
     expect(newsItem.toHtml()).toEqual(`<a href="${newsItem.url()}">${newsItem.title()}</a>`);
   });
 
+  it('has toSummaryHtml() method that returns a link to a summary of the article', function(){
+    expect(newsItem.toSummaryHtml()).toEqual(`<a href="#newsitem/${0}">${newsItem.title()}</a>`);
+  });
+
 })

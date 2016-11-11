@@ -17,6 +17,14 @@
     return `<a href="${this.url()}">${this.title()}</a>`;
   }
 
+  NewsItem.prototype.setId = function(index){
+    this._id = index;
+  }
+
+  NewsItem.prototype.id = function(index){
+    return this._id;
+  }
+
   exports.NewsItem = NewsItem;
 
 })(this)

@@ -19,8 +19,11 @@ describe('NewsList', function(){
     var newsItems = newsList.items();
     expect(newsItems[0].title()).toEqual(results[0].webTitle);
     expect(newsItems[0].url()).toEqual(results[0].webUrl);
+    expect(newsItems[0].id()).toEqual(0);
     expect(newsItems[1].title()).toEqual(results[1].webTitle);
     expect(newsItems[1].url()).toEqual(results[1].webUrl);
+    expect(newsItems[1].id()).toEqual(1);
+
   });
 
   it('contains a list of headlines and URLs', function(){
