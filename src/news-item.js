@@ -13,8 +13,12 @@
     return this._url;
   }
 
-  NewsItem.prototype.toHtml = function(){
+  NewsItem.prototype.linkHtml = function(){
     return `<a href="${this.url()}">${this.title()}</a>`;
+  }
+
+  NewsItem.prototype.summaryLinkHtml = function(){
+    return `<a href="#newsItem/${this.id()}">${this.title()}</a>`;
   }
 
   NewsItem.prototype.setId = function(index){

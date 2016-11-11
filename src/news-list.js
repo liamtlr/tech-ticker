@@ -21,18 +21,26 @@
     return this._newsItems;
   };
 
-  NewsList.prototype.toHtml = function () {
+  NewsList.prototype.toHtml = function(toSummary = false) {
     var html = '';
     if (this.items().length > 0){
       html += '<ul>';
       var i;
       for(i = 0; i < this.items().length; i+= 1){
-        html += `<li>${this.items()[i].toHtml()}</li>`
+        if(toSummary) {
+          html += `<li>${this.items()[i].summaryLinkHtml()}</li>`
+        } else {
+          html += `<li>${this.items()[i].linkHtml()}</li>`
+        }
       }
       html += '</ul>'
     }
     return html
   };
+
+  NewsList.prototype.toSummaryHtml = function() {
+    return this.toHtml(true);
+  }
 
   exports.NewsList = NewsList;
 

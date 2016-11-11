@@ -30,4 +30,8 @@ describe('NewsList', function(){
     expect(newsList.toHtml()).toEqual(`<ul><li><a href="${results[0].webUrl}">${results[0].webTitle}</a></li><li><a href="${results[1].webUrl}">${results[1].webTitle}</a></li></ul>`)
   });
 
+  it('contains a list of headlines and links to their summaries', function(){
+    expect(newsList.toSummaryHtml()).toEqual(`<ul><li><a href="#newsItem/0">${results[0].webTitle}</a></li><li><a href="#newsItem/1">${results[1].webTitle}</a></li></ul>`)
+  });
+
 });
