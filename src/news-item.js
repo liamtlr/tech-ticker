@@ -13,6 +13,10 @@
     return this._url;
   }
 
+  NewsItem.prototype.toHtml = function(){
+    return `<a href="${this.url()}">${this.title()}</a>`;
+  }
+
   exports.NewsItem = NewsItem;
 
 })(this)

@@ -1,16 +1,19 @@
 describe('NewsItem', function(){
 
-  var newsItem, response;
-
-  response = {
+  var response = {
     webTitle: "Google to European commission: Android is key to mobile competition",
     webUrl: "https://www.theguardian.com/technology/2016/nov/10/google-european-commission-android"
   };
 
+  var newsItem = new NewsItem(response.webTitle, response.webUrl);
+
   it('can be created with a text and url', function(){
-    newsItem = new NewsItem(response.webTitle, response.webUrl);
     expect(newsItem.title()).toEqual(response.webTitle);
     expect(newsItem.url()).toEqual(response.webUrl);
+  });
+
+  it('has toHtml() method that returns an html link to the url', function(){
+    expect(newsItem.toHtml()).toEqual(`<a href="${newsItem.url()}">${newsItem.title()}</a>`);
   });
 
 })
