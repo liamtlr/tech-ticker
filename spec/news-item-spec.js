@@ -30,8 +30,4 @@ describe('NewsItem', function(){
     expect(newsItem.summaryLinkHtml()).toEqual(`<a href="#newsItem/${0}">${newsItem.title()}</a>`);
   });
 
-  it('has toSummaryHtml() method that returns a link to a summary of the article', function(){
-    expect(newsItem.summaryHtml()).toEqual(`<div>${summaryResponse.ntences.join(' ')}</div>`);
-  });
-
 })
