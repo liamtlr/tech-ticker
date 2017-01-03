@@ -1,3 +1,4 @@
+
 var xhr = new XMLHttpRequest();
 xhr.open('GET', "http://content.guardianapis.com/technology?api-key=test", true);
 xhr.send();

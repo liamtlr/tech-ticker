@@ -17,7 +17,6 @@
     var newsSummary = new NewsSummary(newsItem);
   }
 
-
   exports.NewsController = NewsController;
 
 })(this)
