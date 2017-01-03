@@ -1,3 +1,7 @@
+
+body {
+  background-color: #D6DBDF;
+}
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -15,6 +19,12 @@ a:focus {
 
 h3 {
     font-weight: 100;
+    color: #212F3C;
+}
+
+h1 {
+    color: #212F3C;
+    font-family: 'Maven Pro', sans-serif;
 }
 
 /* LAYOUT CSS */
@@ -26,6 +36,29 @@ h3 {
 #layout {
     padding: 0;
 }
+
+#full-link {
+    padding-bottom: 10px;
+    font-family: 'Arimo', sans-serif;
+    text-align: center;
+
+}
+
+#news-summary {
+    font-family: 'Arimo', sans-serif;
+    padding-bottom: 20px;
+
+}
+
+#date {
+    text-align: center;
+}
+
+#ticker {
+    text-align: center;
+}
+
+
 
 .header {
     text-align: center;

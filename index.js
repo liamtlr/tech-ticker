@@ -9,8 +9,9 @@ function processRequest() {
   if (xhr.readyState === 4 && xhr.status === 200) {
     var response = JSON.parse(xhr.responseText);
     var newsList = new NewsList(response);
-    console.log()
     var newsController = new NewsController(newsList);
+    var date = new Date();
+    document.getElementById('date').innerHTML = date.toLocaleDateString();
     document.getElementById('news-links').innerHTML = newsList.toSummaryHtml();
   }
 }

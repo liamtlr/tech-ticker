@@ -6,15 +6,25 @@
     <script src="./src/news-list.js"></script>
     <link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-    <link rel="stylesheet" href="{% static 'css/blog2.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Arimo|Maven+Pro" rel="stylesheet">    <link rel="stylesheet" href="blog2.css">
 
 
     <title>Today's news</title>
   </head>
   <body>
-    <div id="news-links">...loading the news...</div>
-    <div id="full-link"></div>
-    <div id="news-summary" style="width: 500px;"></div>
+
+    <div class="pure-g">
+        <div class="pure-u-1-5"></div>
+        <div class="pure-u-3-5">
+          <h1 id="ticker"> Tech News Ticker <h1>
+          <h3 id="date"></h3>
+          <div id="news-links">...loading the news...</div>
+          <div id="full-link"></div>
+          <div id="news-summary" style="width: 100%;"></div>
+
+        </div>
+        <div class="pure-u-1-5"></div>
+    </div>
 
     <script src="index.js"></script>
     <script src="./src/news-summary.js"></script>
